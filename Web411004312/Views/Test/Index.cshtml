@@ -2,17 +2,40 @@
 @{
     ViewBag.Title = "Index";
 }
-<form>
-    <br />
-    姓名：<input type="text" name="username" value="" /><br /><br />
-    帳號：<input type="text" name="account" value="" /><br /><br />
-    密碼：<input type="password" name="password" value="" /><br /><br />
-    年齡：<input type="number" name="" value="" /><br /><br />
-    性別：<input type="radio" name="name" value="A" />男性
-    <input type="radio" name="name" value="B" />女性<br /><br />
-    興趣：<input type="checkbox" name="1" value="A" />打籃球
-    <input type="checkbox" name="2" value="B" />唱歌
-    <input type="checkbox" name="3" value="C" />聽歌<br /><br />
-    
 
-</form>
+@using (Html.BeginForm("index", "text", FormMethod.Post))
+{
+    <div>
+        <br /><br />
+        姓名：@Html.TextBox("username")<br /><br />
+        帳號：@Html.TextBox("account")<br /><br />
+        密碼：@Html.Password("password")<br /><br />
+        性別：@Html.RadioButton("name", "A") 男性
+        @Html.RadioButton("name", "B") 女性 <br /><br />
+        興趣：@Html.CheckBox("1", "A") 打籃球
+        @Html.CheckBox("2", "B") 唱歌
+        @Html.CheckBox("3", "C") 聽歌 <br /><br />
+        關於我：@Html.TextArea("about")
+    </div>
+
+}
+@{
+    var msg = "hi";
+    var isStudent = false;
+}
+<p>@msg</p>
+@DateTime.Now
+
+@if (isStudent)
+{
+    <p>是學生</p>
+}
+else
+{
+    <p>不是學生</p>
+}
+<h2>1~10</h2>
+@for (int i = 1; i <= 10; i++)
+{
+    <p>@i</p>
+} 
