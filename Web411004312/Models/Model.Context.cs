@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web411004312.Models
+namespace Web411018523.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db411004312Entities : DbContext
+    public partial class db411018523Entities : DbContext
     {
-        public db411004312Entities()
-            : base("name=db411004312Entities")
+        public db411018523Entities()
+            : base("name=db411018523Entities")
         {
         }
     

@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Web411004312.Models;
+using Web411018523.Models;
 
-namespace Web411004312.Controllers
+namespace Web411018523.Controllers
 {
     public class StudentsController : Controller
     {
-        private db411004312Entities db = new db411004312Entities();
+        private db411018523Entities db = new db411018523Entities();
 
         // GET: Students
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace Web411004312.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Number,Email")] Student student)
+        public ActionResult Create([Bind(Include = "Id,Username,Number,Email,IsActive")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Web411004312.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Number,Email")] Student student)
+        public ActionResult Edit([Bind(Include = "Id,Username,Number,Email,IsActive")] Student student)
         {
             if (ModelState.IsValid)
             {

@@ -1,41 +1,38 @@
 ﻿using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Web411004312.Controllers
+namespace Web411018523.Controllers
 {
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult SingUp()
+        public ActionResult signUp()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult SingUp(string name, string account, string password)
+        public ActionResult signUp(string name, string account, string password)
         {
             if (name.IsNullOrWhiteSpace())
             {
                 ViewBag.NameMessage = "請輸入姓名";
             }
-            if (name.IsNullOrWhiteSpace())
+            if (account.IsNullOrWhiteSpace())
             {
                 ViewBag.AccountMessage = "請輸入帳號";
             }
-            if (name.IsNullOrWhiteSpace())
+            if (password.IsNullOrWhiteSpace())
             {
                 ViewBag.PasswordMessage = "請輸入密碼";
             }
-            if (!name.IsNullOrWhiteSpace()&& !name.IsNullOrWhiteSpace()&& !name.IsNullOrWhiteSpace())
+            if (!name.IsNullOrWhiteSpace()&& !account.IsNullOrWhiteSpace()&& !password.IsNullOrWhiteSpace())
             {
                 ViewBag.Message = "註冊成功";
             }
-
-
             return View();
         }
     }

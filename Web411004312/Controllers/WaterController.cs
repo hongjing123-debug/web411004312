@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Web411004312.Controllers
+namespace Web411018523.Controllers
 {
     public class WaterController : Controller
     {
@@ -16,10 +16,9 @@ namespace Web411004312.Controllers
             {
                 result = (weight * 30) + "cc";
             }
-            ViewBag.result = result;
             ViewBag.Name = name;
+            ViewBag.Result = result;
             return View();
-
         }
     }
 }
